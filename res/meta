@@ -1,0 +1,298 @@
+{
+	"sheets": [
+		{
+			"name": "resources",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "3",
+					"name": "sell",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "buy",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"id": "carrot_seeds",
+					"buy": 1
+				},
+				{
+					"id": "cabbage_seeds",
+					"buy": 2
+				},
+				{
+					"id": "potato_seeds",
+					"buy": 3
+				},
+				{
+					"id": "pumpkin_seeds",
+					"buy": 4
+				},
+				{
+					"id": "carrot",
+					"sell": 10
+				},
+				{
+					"id": "cabbage",
+					"sell": 20
+				},
+				{
+					"id": "potato",
+					"sell": 30
+				},
+				{
+					"id": "pumpkin",
+					"sell": 40
+				},
+				{
+					"id": "food1",
+					"buy": 1
+				},
+				{
+					"id": "food2",
+					"buy": 2
+				},
+				{
+					"id": "egg",
+					"sell": 5
+				},
+				{
+					"id": "hen",
+					"sell": 7,
+					"buy": 10
+				},
+				{
+					"id": "cow",
+					"buy": 20,
+					"sell": 11
+				},
+				{
+					"id": "milk",
+					"sell": 7
+				},
+				{
+					"id": "sheep",
+					"sell": 12,
+					"buy": 18
+				},
+				{
+					"id": "wool",
+					"sell": 3
+				},
+				{
+					"id": "med_kit",
+					"buy": 5
+				},
+				{
+					"id": "boards"
+				},
+				{
+					"id": "nails"
+				},
+				{
+					"id": "shovel"
+				},
+				{
+					"id": "hammer"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "tileType",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				}
+			],
+			"lines": [
+				{
+					"id": "ground"
+				},
+				{
+					"id": "grass"
+				},
+				{
+					"id": "bed"
+				},
+				{
+					"id": "plant"
+				},
+				{
+					"id": "wither_plant"
+				},
+				{
+					"id": "rot_plant"
+				},
+				{
+					"id": "animal"
+				},
+				{
+					"id": "ill_animal"
+				},
+				{
+					"id": "storage"
+				},
+				{
+					"id": "market_buy"
+				},
+				{
+					"id": "market_sell"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "actions",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "inRes1",
+					"opt": true
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "inRes2",
+					"opt": true
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "outRes",
+					"opt": true
+				},
+				{
+					"typeStr": "6:tileType",
+					"name": "startTile",
+					"opt": true
+				},
+				{
+					"typeStr": "6:tileType",
+					"name": "endTile",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "time"
+				},
+				{
+					"typeStr": "3",
+					"name": "menTime",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "tool",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"inRes1": "cabbage_seeds",
+					"outRes": "cabbage",
+					"id": "plantCabage",
+					"startTile": "bed",
+					"time": 0
+				},
+				{
+					"id": "cure",
+					"menTime": 30,
+					"time": 30,
+					"tool": "med_kit",
+					"startTile": "ill_animal",
+					"endTile": "animal"
+				},
+				{
+					"id": "dig_out",
+					"time": 20,
+					"menTime": 20,
+					"tool": "shovel",
+					"startTile": "rot_plant",
+					"endTile": "bed"
+				},
+				{
+					"id": "water",
+					"time": 10,
+					"startTile": "wither_plant",
+					"endTile": "plant",
+					"menTime": 10
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "constants",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "16",
+					"name": "value",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "initial_workers",
+					"value": 2
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "events",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id",
+					"display": null
+				},
+				{
+					"typeStr": "6:actions",
+					"name": "fixAction",
+					"display": null
+				},
+				{
+					"typeStr": "6:tileType",
+					"name": "tileType",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "ill",
+					"fixAction": "cure",
+					"tileType": "animal"
+				},
+				{
+					"id": "rot",
+					"fixAction": "dig_out",
+					"tileType": "plant"
+				}
+			],
+			"separators": [],
+			"props": {}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}

@@ -1,0 +1,168 @@
+{
+	"sheets": [
+		{
+			"name": "resources",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "3",
+					"name": "sell",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "buy",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"id": "carrot_seeds",
+					"buy": 1
+				},
+				{
+					"id": "cabbage_seeds",
+					"buy": 2
+				},
+				{
+					"id": "potato_seeds",
+					"buy": 3
+				},
+				{
+					"id": "pumpkin_seeds",
+					"buy": 4
+				},
+				{
+					"id": "carrot",
+					"sell": 10
+				},
+				{
+					"id": "cabbage",
+					"sell": 20
+				},
+				{
+					"id": "potato",
+					"sell": 30
+				},
+				{
+					"id": "pumpkin",
+					"sell": 40
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "tileType",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				}
+			],
+			"lines": [
+				{
+					"id": "ground"
+				},
+				{
+					"id": "grass"
+				},
+				{
+					"id": "bed"
+				},
+				{
+					"id": "storage"
+				},
+				{
+					"id": "market_buy"
+				},
+				{
+					"id": "market_sell"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "actions",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "inRes1"
+				},
+				{
+					"typeStr": "3",
+					"name": "inAmount1",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "inRes2",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "inAmount2",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "outRes"
+				},
+				{
+					"typeStr": "3",
+					"name": "outAmount",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "6:tileType",
+					"name": "startTile"
+				},
+				{
+					"typeStr": "6:tileType",
+					"name": "endTile",
+					"display": null
+				},
+				{
+					"typeStr": "4",
+					"name": "time",
+					"opt": true
+				},
+				{
+					"typeStr": "3",
+					"name": "menTime",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "6:resources",
+					"name": "tool",
+					"opt": true
+				}
+			],
+			"lines": [
+				{
+					"endTile": "ground",
+					"startTile": "ground",
+					"inRes1": "cabbage_seeds",
+					"outRes": "cabbage",
+					"id": "plantCabage"
+				}
+			],
+			"separators": [],
+			"props": {}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}

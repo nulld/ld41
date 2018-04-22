@@ -1,0 +1,6 @@
+-cp src
+-debug
+-lib castle
+-lib heaps
+-main Main
+-js dist/game.js
